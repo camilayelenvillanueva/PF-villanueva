@@ -1,0 +1,59 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px; 
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+button {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  border-bottom: 2px solid #E5E5E5;
+}
+
+.nav-logo {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.nav-cart {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+

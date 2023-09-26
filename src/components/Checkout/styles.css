@@ -1,0 +1,137 @@
+/* Checkout */
+.checkout-section {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 15px;
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+li img {
+    margin-right: 20px;
+    width: 100px;            
+    height: 100px;           
+    border-radius: 50%;       
+    overflow: hidden;         
+    object-fit: cover; 
+}
+
+.shipping-details,
+.payment-details {
+    padding: 20px 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px -11px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #D9BAC6;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+
+/* Brief */
+.order-summary {
+    font-family: 'Arial', sans-serif;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+h2 {
+    font-size: 24px;
+    color: #8C6161;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.order-summary>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 16px;
+    color: #333;
+}
+
+.order-summary>div:last-child {
+    border-bottom: none;
+}
+
+strong {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    text-align: right;
+}
+
+.purchase-id {
+    color: #8C6161;
+    font-weight: bold;
+    border: 1px solid #D9BAC6;
+    border-radius: 5px;
+    background-color: #D9D9D9;
+}
+
+.thank-you-message {
+    color: #8C6161;
+    font-size: 1.5rem;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #D9BAC6;
+    padding: 10px;
+    border-radius: 5px;
+}
