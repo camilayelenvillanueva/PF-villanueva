@@ -21,8 +21,6 @@ const ItemDetail = ({ addToCart }) => {
         const quantity = selectedQuantities[producto.id] || 1
 
         addToCart({ ...producto, quantity: quantity })
-
-        alert(`Producto "${producto.title}" ha sido agregado al carrito con una cantidad de ${quantity}!`)
     }
 
 

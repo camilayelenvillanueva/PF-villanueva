@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Brief from '../Checkout/Brief'
+import Brief from '../Checkout/Brief/Brief'
 import Checkout from '../Checkout/Checkout'
 
 const CartPage = ({ cart, removeFromCart }) => {
@@ -13,8 +13,8 @@ const CartPage = ({ cart, removeFromCart }) => {
     const calculateTotal = () => {
         return localCart.reduce((acc, product) => {
             return acc + (product.price * product.quantity)
-        }, 0);
-    };
+        }, 0)
+    }
 
     const handleCheckout = () => {
         setShowInvoice(true)
@@ -25,8 +25,8 @@ const CartPage = ({ cart, removeFromCart }) => {
             if (product.id === productId) {
                 return { ...product, quantity: product.quantity - 1 }
             }
-            return product;
-        });
+            return product
+        })
 
         const filteredCart = updatedCart.filter(product => product.quantity > 0)
 
@@ -53,21 +53,9 @@ const CartPage = ({ cart, removeFromCart }) => {
         const { name, value } = event.target
         setStateFunction(prevState => ({ ...prevState, [name]: value }))
     }
-
-    const handlePaymentProcess = () => {
-        if (!shippingInfo.name || !paymentInfo.cardNumber) {
-            alert('Por favor, completa todos los campos antes de proceder.')
-            return
-        }
-
-        const confirmationNumber = Math.random().toString(36).substring(2, 10).toUpperCase()
-        alert(`Procesando pago... Tu número de confirmación es: ${confirmationNumber}`)
-    }
-
-
     return (
         <div className="cart-page">
-            <Checkout 
+            <Checkout
                 localCart={localCart}
                 handleRemoveSingleItem={handleRemoveSingleItem}
                 shippingInfo={shippingInfo}

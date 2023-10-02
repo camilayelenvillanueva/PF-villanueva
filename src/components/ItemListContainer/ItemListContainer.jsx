@@ -38,10 +38,6 @@ function ItemListContainer() {
 
     fetchProductsFromFirestore()
   }, [categoryID])
-  
-  const handleQuickAddToCart = (producto) => {
-    alert(`Producto "${producto.title}" ha sido agregado al carrito!`)
-  }
 
   if (isLoading) {
     return <div className="loadingStyle">Cargando...</div>
@@ -49,9 +45,10 @@ function ItemListContainer() {
 
   return (
     <div className="item-list-container">
-        <ItemList productos={allProducts} onAddToCart={handleQuickAddToCart} />
+      <ItemList productos={allProducts} isLoading={isLoading} />
+
     </div>
-);
+  )
 
 }
 

@@ -13,3 +13,6 @@ const ItemQuantitySelector = ({ max, onAdd, handleAddToCart }) => {
 }
 
 export default ItemQuantitySelector
+
+
+

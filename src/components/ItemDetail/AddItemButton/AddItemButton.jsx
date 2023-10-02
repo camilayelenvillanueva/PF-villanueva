@@ -11,3 +11,5 @@ const AddItemButton = ({ product, handleAddToCart }) => {
 }
 
 export default AddItemButton
+
+

@@ -15,11 +15,8 @@ const NavBar = ({ cart }) => {
       try {
         const querySnapshot = await getDocs(collection(db, 'products'))
         const productsData = querySnapshot.docs.map(doc => doc.data())
-        console.log("Productos desde Firestore:", productsData)
-
 
         const uniqueCategories = [...new Set(productsData.map(product => product.categoryID))]
-        console.log("Categorías únicas:", uniqueCategories)
         
         setCategories(uniqueCategories)
       } catch (error) {
@@ -55,3 +52,5 @@ const NavBar = ({ cart }) => {
 }
 
 export default NavBar
+
+

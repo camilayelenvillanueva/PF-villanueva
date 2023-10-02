@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
+import './Brief.css'
 
 const Brief = ({ localCart, calculateTotal }) => {
     const [loading, setLoading] = useState(false)
@@ -8,9 +9,9 @@ const Brief = ({ localCart, calculateTotal }) => {
 
     useEffect(() => {
         if (loading && !purchaseId) {
-      
+
             setTimeout(() => {
-              
+
                 setPurchaseId(`ID-${Math.floor(Math.random() * 1000000)}`)
                 setLoading(false)
                 setPurchaseCompleted(true)
@@ -34,12 +35,12 @@ const Brief = ({ localCart, calculateTotal }) => {
             ))}
             <strong>Total a pagar: ${calculateTotal()}</strong>
 
-             {loading && <p>Generando código ID de compra...</p>}
+            {loading && <p>Generando código ID de compra...</p>}
             {purchaseId && !loading && <p className="purchase-id">Código de compra: {purchaseId}</p>}
 
-           {!purchaseCompleted && <button onClick={finalizePurchase}>Finalizar Compra</button>}
-            
-          
+            {!purchaseCompleted && <button onClick={finalizePurchase}>Finalizar Compra</button>}
+
+
             {purchaseCompleted && <p className="purchase-id" >Gracias por su compra 💜</p>}
         </div>
     )
