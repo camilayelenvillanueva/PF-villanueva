@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import './styles.css'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 const Checkout = ({ localCart, handleRemoveSingleItem, shippingInfo, setShippingInfo, paymentInfo, setPaymentInfo, handleInputChange, handleCheckout }) => {
     const [errors, setErrors] = useState({})
@@ -12,7 +14,7 @@ const Checkout = ({ localCart, handleRemoveSingleItem, shippingInfo, setShipping
         setErrors(formErrors)
         return Object.keys(formErrors).length === 0
     }
-    
+
     return (
         <div className="checkout-section">
             <h1>Tu Carrito</h1>
@@ -72,7 +74,13 @@ const Checkout = ({ localCart, handleRemoveSingleItem, shippingInfo, setShipping
 
             <button onClick={() => {
                 if (validateForm()) {
-                    handleCheckout();
+                    Toastify({
+                        text: "Compra finalizada con éxito",
+                        duration: 3000,
+                        gravity: "top",
+                        backgroundColor: "#a9a9a9",
+                    }).showToast()
+                    handleCheckout()
                 }
             }}>Finalizar Compra</button>
         </div>
@@ -80,14 +88,3 @@ const Checkout = ({ localCart, handleRemoveSingleItem, shippingInfo, setShipping
 }
 
 export default Checkout
-
-
-
-
-
-
-
-
-
-
-

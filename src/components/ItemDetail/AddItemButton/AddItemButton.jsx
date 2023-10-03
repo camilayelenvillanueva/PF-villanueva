@@ -1,7 +1,6 @@
 import React from 'react'
 import './AddItemButton.css'
 
-
 const AddItemButton = ({ product, handleAddToCart }) => {
     return (
         <button className="add-button" onClick={() => handleAddToCart(product)}>
@@ -11,5 +10,3 @@ const AddItemButton = ({ product, handleAddToCart }) => {
 }
 
 export default AddItemButton
-
-

@@ -17,7 +17,7 @@ const NavBar = ({ cart }) => {
         const productsData = querySnapshot.docs.map(doc => doc.data())
 
         const uniqueCategories = [...new Set(productsData.map(product => product.categoryID))]
-        
+
         setCategories(uniqueCategories)
       } catch (error) {
         console.error("Error:", error)
@@ -30,7 +30,7 @@ const NavBar = ({ cart }) => {
   const handleMenuToggle = () => {
     setIsMenuOpen(prev => !prev)
   }
-  
+
   return (
     <nav className="navbar">
       <span className="menu-icon material-icons" onClick={handleMenuToggle}>
@@ -52,5 +52,3 @@ const NavBar = ({ cart }) => {
 }
 
 export default NavBar
-
-

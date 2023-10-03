@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
@@ -24,7 +23,7 @@ function ItemListContainer() {
         const querySnapshot = await getDocs(productsQuery)
         const products = querySnapshot.docs.map(doc => {
           return { id: doc.id, ...doc.data() }
-        });
+        })
 
         setAllProducts(products)
       } catch (error) {

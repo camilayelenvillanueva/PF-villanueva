@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import './ItemDetail.css'
@@ -8,6 +7,8 @@ import AddItemButton from './AddItemButton/AddItemButton'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from "../../firebase/client"
 import ColorSelector from './ColorSelector/ColorSelector'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 const ItemDetail = ({ addToCart }) => {
     const { productId } = useParams()
@@ -21,8 +22,14 @@ const ItemDetail = ({ addToCart }) => {
     const handleAddToCart = (producto) => {
         const quantity = selectedQuantities[producto.id] || 1
         addToCart({ ...producto, quantity: quantity })
-    };
 
+        Toastify({
+            text: `Añadido al carrito: ${producto.title}`,
+            duration: 3000,
+            gravity: "top",
+            backgroundColor: "#a9a9a9",
+        }).showToast()
+    }
     const handleQuantityChange = (productId, quantity) => {
         setSelectedQuantities({
             ...selectedQuantities,
@@ -57,7 +64,6 @@ const ItemDetail = ({ addToCart }) => {
                 setLoading(false)
             }
         }
-
         fetchProductFromFirestore()
     }, [productId])
 
@@ -85,19 +91,16 @@ const ItemDetail = ({ addToCart }) => {
 
             <div className="product-info">
                 <Description product={product} />
-
                 <ColorSelector
                     colors={colors}
                     activeColor={activeColor}
                     onColorSelect={setActiveColor}
                 />
-
                 <ItemQuantitySelector
                     max={10}
                     onAdd={(quantity) => handleQuantityChange(product.id, quantity)}
                     onAddToCart={() => handleAddToCart(product)}
                 />
-
                 <AddItemButton product={product} handleAddToCart={handleAddToCart} />
             </div>
         </div>

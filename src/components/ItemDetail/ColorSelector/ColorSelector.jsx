@@ -1,4 +1,3 @@
-
 import React from 'react'
 import './ColorSelector.css'
 
@@ -14,7 +13,7 @@ const ColorSelector = ({ colors, activeColor, onColorSelect }) => {
                 ></div>
             ))}
         </div>
-    );
+    )
 }
 
 export default ColorSelector

@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from 'react'
 import './Brief.css'
+import Toastify from 'toastify-js'
+import 'toastify-js/src/toastify.css'
 
 const Brief = ({ localCart, calculateTotal }) => {
     const [loading, setLoading] = useState(false)
@@ -15,6 +17,13 @@ const Brief = ({ localCart, calculateTotal }) => {
                 setPurchaseId(`ID-${Math.floor(Math.random() * 1000000)}`)
                 setLoading(false)
                 setPurchaseCompleted(true)
+
+                Toastify({
+                    text: "Compra finalizada con éxito. Gracias por su compra 💜",
+                    duration: 3000,
+                    gravity: "top",
+                    backgroundColor: "#a9a9a9",
+                }).showToast()
             }, 3000)
         }
     }, [loading, purchaseId])
