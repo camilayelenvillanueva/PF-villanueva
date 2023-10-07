@@ -7,8 +7,6 @@ import AddItemButton from './AddItemButton/AddItemButton'
 import { doc, getDoc } from 'firebase/firestore'
 import { db } from "../../firebase/client"
 import ColorSelector from './ColorSelector/ColorSelector'
-import Toastify from 'toastify-js'
-import 'toastify-js/src/toastify.css'
 
 const ItemDetail = ({ addToCart }) => {
     const { productId } = useParams()
@@ -23,12 +21,6 @@ const ItemDetail = ({ addToCart }) => {
         const quantity = selectedQuantities[producto.id] || 1
         addToCart({ ...producto, quantity: quantity })
 
-        Toastify({
-            text: `Añadido al carrito: ${producto.title}`,
-            duration: 3000,
-            gravity: "top",
-            backgroundColor: "#a9a9a9",
-        }).showToast()
     }
     const handleQuantityChange = (productId, quantity) => {
         setSelectedQuantities({
