@@ -20,7 +20,6 @@ const ItemDetail = ({ addToCart }) => {
     const handleAddToCart = (producto) => {
         const quantity = selectedQuantities[producto.id] || 1
         addToCart({ ...producto, quantity: quantity })
-
     }
     const handleQuantityChange = (productId, quantity) => {
         setSelectedQuantities({

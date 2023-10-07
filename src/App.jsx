@@ -5,13 +5,14 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CartPage from './components/CartPage/CartPage'
 import ItemDetail from './components/ItemDetail/ItemDetail'
-import { ProductProvider, ProductContext } from './contexts/ProductContext'
+
+import { CartProvider, CartContext } from './contexts/ProductContext'
 
 function App() {
-  const { cart, addToCart, removeFromCart } = React.useContext(ProductContext)
+  const { cart, addToCart, removeFromCart } = React.useContext(CartContext)
 
   return (
-    <ProductProvider>
+    <CartProvider>
       <Router>
         <div className="App">
           <NavBar cart={cart} />
@@ -23,8 +24,8 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </ProductProvider>
-  );
+    </CartProvider>
+  )
 }
 
 export default App
