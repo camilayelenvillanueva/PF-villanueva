@@ -5,8 +5,8 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CartPage from './components/CartPage/CartPage'
 import ItemDetail from './components/ItemDetail/ItemDetail'
+import { CartContext, CartProvider } from './contexts/ProductContext'
 
-import { CartProvider, CartContext } from './contexts/ProductContext'
 
 function App() {
   const { cart, addToCart, removeFromCart } = React.useContext(CartContext)
@@ -24,8 +24,10 @@ function App() {
           </Routes>
         </div>
       </Router>
-    </CartProvider>
-  )
+    </ CartProvider>
+  );
 }
 
 export default App
+
+

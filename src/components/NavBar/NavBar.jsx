@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react'
+
+
+import React, { useState, useEffect, useContext } from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import './NavBar.css'
 import { Link } from 'react-router-dom'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from "../../firebase/client"
+import { CartContext } from '../../contexts/ProductContext'
 
-const NavBar = ({ cart }) => {
+const NavBar = () => {
+  const { cart } = useContext(CartContext)
   const cartItemCount = cart.length
   const [categories, setCategories] = useState([])
   const [isMenuOpen, setIsMenuOpen] = useState(false)
